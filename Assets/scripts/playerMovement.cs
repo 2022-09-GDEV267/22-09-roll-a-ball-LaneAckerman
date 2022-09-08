@@ -10,6 +10,7 @@ public class playerMovement : MonoBehaviour
 	public float speed;
 	public TextMeshProUGUI countText;
 	public GameObject winTextObject;
+	public Animator animator;
 
 	private float movementX;
 	private float movementY;
@@ -71,6 +72,10 @@ public class playerMovement : MonoBehaviour
 		{
 			// Set the text value of your 'winText'
 			winTextObject.SetActive(true);
+			speed = 0;
+			GetComponent<Animator>().enabled = true;
+			animator.SetBool("win", true);
+			this.enabled = false;
 		}
 	}
 }
